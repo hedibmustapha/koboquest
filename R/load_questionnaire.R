@@ -159,7 +159,7 @@ load_questionnaire<-function(data,
      variable.names<-as.character(variable.names)
      variable.names<-to_alphanumeric_lowercase(variable.names)
      labelcol<-grep("label",names(questions))[1]
-     questionnaire_rows<-match(variable.names,questions[,"name"])
+     questionnaire_rows<-match(variable.names,questions$name)
      questionnaire_rows[is.na(variable.names)]<-NA
      labels<-questionnaire_rows
      labels[!is.na(questionnaire_rows)]<-questions[questionnaire_rows[!is.na(questionnaire_rows)],labelcol]
