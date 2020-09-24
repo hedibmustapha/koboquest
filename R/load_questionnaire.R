@@ -145,7 +145,7 @@ load_questionnaire<-function(data,
       labels<-replace_with_lookup_table(
         as.character(responses),
         # MAKE LABEL COLUMN A PARAMETER!!!
-        cbind(as.character(choices_per_data_column[[variable.name]]$name),as.character(choices_per_data_column[[variable.name]][,choices.label.column.to.use]))
+        cbind(as.character(choices_per_data_column[[variable.name]]$name),choices_per_data_column[[variable.name]][,choices.label.column.to.use])
       )
       # fix those that were not found to go back to original NA
       labels[is.na(labels)]<-responses[is.na(labels)]
